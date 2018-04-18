@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,6 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navController = UINavigationController(rootViewController: EmployeesViewController(viewModel: EmployeesViewModel()))
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.deleteAll()
+        }
         
         return true
     }

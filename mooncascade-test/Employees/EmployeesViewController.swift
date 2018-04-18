@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 class EmployeesViewController: UIViewController {
 
@@ -70,13 +71,21 @@ class EmployeesViewController: UIViewController {
 
 extension EmployeesViewController: UITableViewDataSource, UITableViewDelegate {
    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return viewModel.dataSource.count
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.items.count
+        return viewModel.dataSource[section].employees.count
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return viewModel.dataSource[section].title
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.reuseIndentifier) as! EmployeeTableViewCell
-        cell.textLabel?.text = viewModel.items[indexPath.row].firstName + viewModel.items[indexPath.row].lastName
+        cell.textLabel?.text = viewModel.dataSource[indexPath.section].employees[indexPath.row].firstName + " " + viewModel.dataSource[indexPath.section].employees[indexPath.row].lastName
         
         return cell
     }
@@ -89,6 +98,7 @@ extension EmployeesViewController: UITableViewDataSource, UITableViewDelegate {
 extension EmployeesViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
-
+        viewModel.filter = textSearched
+        tableView.reloadData()
     }
 }
