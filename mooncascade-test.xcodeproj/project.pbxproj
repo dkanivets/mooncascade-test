@@ -1,0 +1,662 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		0A51352120871C8700A4A56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51352020871C8700A4A56C /* AppDelegate.swift */; };
+		0A51352320871C8700A4A56C /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51352220871C8700A4A56C /* EmployeesViewController.swift */; };
+		0A51352820871C8900A4A56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A51352720871C8900A4A56C /* Assets.xcassets */; };
+		0A51352B20871C8900A4A56C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0A51352920871C8900A4A56C /* LaunchScreen.storyboard */; };
+		0A51353620871C8900A4A56C /* mooncascade_testTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51353520871C8900A4A56C /* mooncascade_testTests.swift */; };
+		0A51354220874B1800A4A56C /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354120874B1800A4A56C /* NetworkService.swift */; };
+		0A51354420874E6000A4A56C /* SwiftExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354320874E6000A4A56C /* SwiftExtensions.swift */; };
+		0A51354720874F5800A4A56C /* RLMEmployee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354620874F5800A4A56C /* RLMEmployee.swift */; };
+		0A5135492087513400A4A56C /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5135482087513400A4A56C /* EmployeeService.swift */; };
+		0A51354D2087545A00A4A56C /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354C2087545A00A4A56C /* EmployeesViewModel.swift */; };
+		0A51354F20875D3500A4A56C /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354E20875D3500A4A56C /* EmployeeTableViewCell.swift */; };
+		2D04D6D34865741809EDBC34 /* Pods_mooncascade_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A0CC3DB1A3820A67D38483 /* Pods_mooncascade_test.framework */; };
+		E6A840625F9D90F7B6C91219 /* Pods_mooncascade_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9759F143FE9F67247D8F317A /* Pods_mooncascade_testTests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		0A51353220871C8900A4A56C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 0A51351520871C8700A4A56C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 0A51351C20871C8700A4A56C;
+			remoteInfo = "mooncascade-test";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0A51351D20871C8700A4A56C /* mooncascade-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mooncascade-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A51352020871C8700A4A56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		0A51352220871C8700A4A56C /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
+		0A51352720871C8900A4A56C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		0A51352A20871C8900A4A56C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		0A51352C20871C8900A4A56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A51353120871C8900A4A56C /* mooncascade-testTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "mooncascade-testTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		0A51353520871C8900A4A56C /* mooncascade_testTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mooncascade_testTests.swift; sourceTree = "<group>"; };
+		0A51353720871C8900A4A56C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0A51354120874B1800A4A56C /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		0A51354320874E6000A4A56C /* SwiftExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftExtensions.swift; sourceTree = "<group>"; };
+		0A51354620874F5800A4A56C /* RLMEmployee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RLMEmployee.swift; sourceTree = "<group>"; };
+		0A5135482087513400A4A56C /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
+		0A51354C2087545A00A4A56C /* EmployeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
+		0A51354E20875D3500A4A56C /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		0F31D8AA7EBFE71DB00F74E5 /* Pods-mooncascade-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-testTests/Pods-mooncascade-testTests.release.xcconfig"; sourceTree = "<group>"; };
+		1AE7CE0AB8EB60C3A3C1B02C /* Pods-mooncascade-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test.release.xcconfig"; sourceTree = "<group>"; };
+		4152541714962469024918F9 /* Pods-mooncascade-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test.debug.xcconfig"; sourceTree = "<group>"; };
+		81A0CC3DB1A3820A67D38483 /* Pods_mooncascade_test.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mooncascade_test.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9759F143FE9F67247D8F317A /* Pods_mooncascade_testTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mooncascade_testTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8DC72037D70A5A02D8102F4 /* Pods-mooncascade-testTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-testTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-testTests/Pods-mooncascade-testTests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		0A51351A20871C8700A4A56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2D04D6D34865741809EDBC34 /* Pods_mooncascade_test.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A51352E20871C8900A4A56C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E6A840625F9D90F7B6C91219 /* Pods_mooncascade_testTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		04FACD342890C8A5493EB941 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				81A0CC3DB1A3820A67D38483 /* Pods_mooncascade_test.framework */,
+				9759F143FE9F67247D8F317A /* Pods_mooncascade_testTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		0A51351420871C8700A4A56C = {
+			isa = PBXGroup;
+			children = (
+				0A51351F20871C8700A4A56C /* mooncascade-test */,
+				0A51353420871C8900A4A56C /* mooncascade-testTests */,
+				0A51351E20871C8700A4A56C /* Products */,
+				6AB9F970EF4AAE296D1CD1FE /* Pods */,
+				04FACD342890C8A5493EB941 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		0A51351E20871C8700A4A56C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				0A51351D20871C8700A4A56C /* mooncascade-test.app */,
+				0A51353120871C8900A4A56C /* mooncascade-testTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		0A51351F20871C8700A4A56C /* mooncascade-test */ = {
+			isa = PBXGroup;
+			children = (
+				0A51352020871C8700A4A56C /* AppDelegate.swift */,
+				0A51354320874E6000A4A56C /* SwiftExtensions.swift */,
+				0A51354520874E8100A4A56C /* Models */,
+				0A51354020874B0700A4A56C /* Services */,
+				0A51354B2087544900A4A56C /* Employees */,
+				0A51352720871C8900A4A56C /* Assets.xcassets */,
+				0A51352920871C8900A4A56C /* LaunchScreen.storyboard */,
+				0A51352C20871C8900A4A56C /* Info.plist */,
+			);
+			path = "mooncascade-test";
+			sourceTree = "<group>";
+		};
+		0A51353420871C8900A4A56C /* mooncascade-testTests */ = {
+			isa = PBXGroup;
+			children = (
+				0A51353520871C8900A4A56C /* mooncascade_testTests.swift */,
+				0A51353720871C8900A4A56C /* Info.plist */,
+			);
+			path = "mooncascade-testTests";
+			sourceTree = "<group>";
+		};
+		0A51354020874B0700A4A56C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0A51354120874B1800A4A56C /* NetworkService.swift */,
+				0A5135482087513400A4A56C /* EmployeeService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0A51354520874E8100A4A56C /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0A51354620874F5800A4A56C /* RLMEmployee.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0A51354B2087544900A4A56C /* Employees */ = {
+			isa = PBXGroup;
+			children = (
+				0A51352220871C8700A4A56C /* EmployeesViewController.swift */,
+				0A51354C2087545A00A4A56C /* EmployeesViewModel.swift */,
+				0A51354E20875D3500A4A56C /* EmployeeTableViewCell.swift */,
+			);
+			path = Employees;
+			sourceTree = "<group>";
+		};
+		6AB9F970EF4AAE296D1CD1FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4152541714962469024918F9 /* Pods-mooncascade-test.debug.xcconfig */,
+				1AE7CE0AB8EB60C3A3C1B02C /* Pods-mooncascade-test.release.xcconfig */,
+				A8DC72037D70A5A02D8102F4 /* Pods-mooncascade-testTests.debug.xcconfig */,
+				0F31D8AA7EBFE71DB00F74E5 /* Pods-mooncascade-testTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		0A51351C20871C8700A4A56C /* mooncascade-test */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A51353A20871C8900A4A56C /* Build configuration list for PBXNativeTarget "mooncascade-test" */;
+			buildPhases = (
+				3F62F36FD9F198447A922892 /* [CP] Check Pods Manifest.lock */,
+				0A51351920871C8700A4A56C /* Sources */,
+				0A51351A20871C8700A4A56C /* Frameworks */,
+				0A51351B20871C8700A4A56C /* Resources */,
+				BE846FEA619E1736762CA6A7 /* [CP] Embed Pods Frameworks */,
+				97162BB69FE2C2916EC9B956 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "mooncascade-test";
+			productName = "mooncascade-test";
+			productReference = 0A51351D20871C8700A4A56C /* mooncascade-test.app */;
+			productType = "com.apple.product-type.application";
+		};
+		0A51353020871C8900A4A56C /* mooncascade-testTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0A51353D20871C8900A4A56C /* Build configuration list for PBXNativeTarget "mooncascade-testTests" */;
+			buildPhases = (
+				F8DABE48032A65E90B0B728A /* [CP] Check Pods Manifest.lock */,
+				0A51352D20871C8900A4A56C /* Sources */,
+				0A51352E20871C8900A4A56C /* Frameworks */,
+				0A51352F20871C8900A4A56C /* Resources */,
+				E09154D1B5A58313C1B20991 /* [CP] Embed Pods Frameworks */,
+				F8CC77715F9996407BFC9292 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				0A51353320871C8900A4A56C /* PBXTargetDependency */,
+			);
+			name = "mooncascade-testTests";
+			productName = "mooncascade-testTests";
+			productReference = 0A51353120871C8900A4A56C /* mooncascade-testTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		0A51351520871C8700A4A56C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+				ORGANIZATIONNAME = "Dmitry Kanivets";
+				TargetAttributes = {
+					0A51351C20871C8700A4A56C = {
+						CreatedOnToolsVersion = 9.3;
+					};
+					0A51353020871C8900A4A56C = {
+						CreatedOnToolsVersion = 9.3;
+						TestTargetID = 0A51351C20871C8700A4A56C;
+					};
+				};
+			};
+			buildConfigurationList = 0A51351820871C8700A4A56C /* Build configuration list for PBXProject "mooncascade-test" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 0A51351420871C8700A4A56C;
+			productRefGroup = 0A51351E20871C8700A4A56C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				0A51351C20871C8700A4A56C /* mooncascade-test */,
+				0A51353020871C8900A4A56C /* mooncascade-testTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		0A51351B20871C8700A4A56C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A51352B20871C8900A4A56C /* LaunchScreen.storyboard in Resources */,
+				0A51352820871C8900A4A56C /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A51352F20871C8900A4A56C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3F62F36FD9F198447A922892 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mooncascade-test-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		97162BB69FE2C2916EC9B956 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BE846FEA619E1736762CA6A7 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ARSLineProgress/ARSLineProgress.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveCocoa/ReactiveCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/ReactiveSwift/ReactiveSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/SwiftyJSON/SwiftyJSON.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ARSLineProgress.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ReactiveSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftyJSON.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E09154D1B5A58313C1B20991 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mooncascade-testTests/Pods-mooncascade-testTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8CC77715F9996407BFC9292 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-mooncascade-testTests/Pods-mooncascade-testTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F8DABE48032A65E90B0B728A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mooncascade-testTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		0A51351920871C8700A4A56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A51352320871C8700A4A56C /* EmployeesViewController.swift in Sources */,
+				0A51354F20875D3500A4A56C /* EmployeeTableViewCell.swift in Sources */,
+				0A5135492087513400A4A56C /* EmployeeService.swift in Sources */,
+				0A51354420874E6000A4A56C /* SwiftExtensions.swift in Sources */,
+				0A51354720874F5800A4A56C /* RLMEmployee.swift in Sources */,
+				0A51354D2087545A00A4A56C /* EmployeesViewModel.swift in Sources */,
+				0A51354220874B1800A4A56C /* NetworkService.swift in Sources */,
+				0A51352120871C8700A4A56C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		0A51352D20871C8900A4A56C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0A51353620871C8900A4A56C /* mooncascade_testTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		0A51353320871C8900A4A56C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 0A51351C20871C8700A4A56C /* mooncascade-test */;
+			targetProxy = 0A51353220871C8900A4A56C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		0A51352920871C8900A4A56C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				0A51352A20871C8900A4A56C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		0A51353820871C8900A4A56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		0A51353920871C8900A4A56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		0A51353B20871C8900A4A56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4152541714962469024918F9 /* Pods-mooncascade-test.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 798XUQKJJ5;
+				INFOPLIST_FILE = "mooncascade-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitrykanivets.mooncascade-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		0A51353C20871C8900A4A56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1AE7CE0AB8EB60C3A3C1B02C /* Pods-mooncascade-test.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 798XUQKJJ5;
+				INFOPLIST_FILE = "mooncascade-test/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitrykanivets.mooncascade-test";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		0A51353E20871C8900A4A56C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A8DC72037D70A5A02D8102F4 /* Pods-mooncascade-testTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 798XUQKJJ5;
+				INFOPLIST_FILE = "mooncascade-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitrykanivets.mooncascade-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mooncascade-test.app/mooncascade-test";
+			};
+			name = Debug;
+		};
+		0A51353F20871C8900A4A56C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F31D8AA7EBFE71DB00F74E5 /* Pods-mooncascade-testTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 798XUQKJJ5;
+				INFOPLIST_FILE = "mooncascade-testTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.dmitrykanivets.mooncascade-testTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/mooncascade-test.app/mooncascade-test";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		0A51351820871C8700A4A56C /* Build configuration list for PBXProject "mooncascade-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A51353820871C8900A4A56C /* Debug */,
+				0A51353920871C8900A4A56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A51353A20871C8900A4A56C /* Build configuration list for PBXNativeTarget "mooncascade-test" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A51353B20871C8900A4A56C /* Debug */,
+				0A51353C20871C8900A4A56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		0A51353D20871C8900A4A56C /* Build configuration list for PBXNativeTarget "mooncascade-testTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0A51353E20871C8900A4A56C /* Debug */,
+				0A51353F20871C8900A4A56C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 0A51351520871C8700A4A56C /* Project object */;
+}

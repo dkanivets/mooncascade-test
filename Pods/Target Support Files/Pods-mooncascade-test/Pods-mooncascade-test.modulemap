@@ -1,0 +1,6 @@
+framework module Pods_mooncascade_test {
+  umbrella header "Pods-mooncascade-test-umbrella.h"
+
+  export *
+  module * { export * }
+}
