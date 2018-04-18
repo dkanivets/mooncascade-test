@@ -12,10 +12,10 @@ class RLMEmployee: Object {
     @objc dynamic var firstName: String = ""
     @objc dynamic var lastName: String = ""
     @objc dynamic var position: String = ""
+    @objc dynamic var contactID: String? = nil
     @objc dynamic var email: String? = nil
     @objc dynamic var phone: String? = nil
     let projects = List<String>()
-    @objc dynamic var id: String = ""
 
     
     func write() {
@@ -26,6 +26,6 @@ class RLMEmployee: Object {
     }
     
     override static func primaryKey() -> String? {
-        return "id"
+        return "email"
     }
 }

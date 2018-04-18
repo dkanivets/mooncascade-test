@@ -10,9 +10,26 @@ import UIKit
 
 class EmployeeTableViewCell: UITableViewCell {
     static let reuseIndentifier = "employeeTableViewCell"
+    var contactLabel: UILabel!
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-
+    override func prepareForReuse() {
+        contactLabel.removeFromSuperview()
+    }
+    
+    func setupCell(employee: RLMEmployee) {
+        contactLabel = UILabel()
+        contactLabel.text = "  Contact  "
+        contactLabel.textColor = UIColor.white
+        contactLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.7)
+        contactLabel.layer.cornerRadius = 4
+        contactLabel.clipsToBounds = true
+        self.contentView.addSubview(contactLabel)
+        contactLabel.translatesAutoresizingMaskIntoConstraints = false
+        contactLabel.rightAnchor.constraint(equalTo: self.contentView.rightAnchor, constant: -16).isActive = true
+        contactLabel.centerYAnchor.constraint(equalTo: self.contentView.centerYAnchor).isActive = true
+        contactLabel.heightAnchor.constraint(equalToConstant: 40)
+        
+        self.textLabel?.text = employee.firstName + " " + employee.lastName
+        contactLabel.isHidden = employee.contactID == nil
     }
 }

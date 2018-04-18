@@ -8,6 +8,8 @@
 
 import UIKit
 import RealmSwift
+import ReactiveSwift
+import ARSLineProgress
 
 class EmployeesViewController: UIViewController {
 
@@ -16,7 +18,7 @@ class EmployeesViewController: UIViewController {
     var refreshControl: UIRefreshControl!
     var viewModel: EmployeesViewModelProtocol
     
-    init (viewModel: EmployeesViewModelProtocol) {
+    init (viewModel: EmployeesViewModelProtocol) { 
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -53,18 +55,30 @@ class EmployeesViewController: UIViewController {
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
         tableView.addSubview(refreshControl)
+        
+        viewModel.filter.signal.throttle(0.5, on: QueueScheduler.main).observeValues { [weak self] _ in
+            self?.viewModel.refreshViewModel()
+            self?.tableView.reloadData()
+        }
+        
+        self.refresh(sender: self)
     }
     
-    @objc func refresh() {
+    @objc func refresh(sender: AnyObject) {
+        if sender is UIRefreshControl == false {
+            ARSLineProgress.show()
+        }
         viewModel.updateItemsAction.apply([.tartu, .tallinn]).on(
             failed: { error in
                 print(error.localizedDescription)
             },
             completed: { [weak self] in
+                self?.viewModel.refreshViewModel()
                 self?.tableView.reloadData()
             },
             terminated: { [weak self] in
                 self?.refreshControl.endRefreshing()
+                ARSLineProgress.hide()
         }).start()
     }
 }
@@ -85,7 +99,7 @@ extension EmployeesViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: EmployeeTableViewCell.reuseIndentifier) as! EmployeeTableViewCell
-        cell.textLabel?.text = viewModel.dataSource[indexPath.section].employees[indexPath.row].firstName + " " + viewModel.dataSource[indexPath.section].employees[indexPath.row].lastName
+        cell.setupCell(employee: viewModel.dataSource[indexPath.section].employees[indexPath.row])
         
         return cell
     }
@@ -98,7 +112,6 @@ extension EmployeesViewController: UITableViewDataSource, UITableViewDelegate {
 extension EmployeesViewController: UISearchBarDelegate {
     
     func searchBar(_ searchBar: UISearchBar, textDidChange textSearched: String) {
-        viewModel.filter = textSearched
-        tableView.reloadData()
+        viewModel.filter.value = textSearched
     }
 }

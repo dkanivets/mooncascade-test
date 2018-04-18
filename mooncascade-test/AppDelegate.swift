@@ -20,11 +20,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = navController
         window?.makeKeyAndVisible()
         
-        let realm = try! Realm()
-        try! realm.write {
-            realm.deleteAll()
-        }
-        
         return true
     }
 
