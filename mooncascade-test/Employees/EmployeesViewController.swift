@@ -69,8 +69,13 @@ class EmployeesViewController: UIViewController {
             ARSLineProgress.show()
         }
         viewModel.updateItemsAction.apply([.tartu, .tallinn]).on(
-            failed: { error in
-                print(error.localizedDescription)
+            failed: { [weak self] error in
+                let alert = UIAlertController(title: "Error", message: error.localizedDescription, preferredStyle: .alert)
+                let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: { _ in
+                    alert.dismiss(animated: true, completion: nil)
+                })
+                alert.addAction(cancel)
+                self?.present(alert, animated: true, completion: nil)
             },
             completed: { [weak self] in
                 self?.viewModel.refreshViewModel()
@@ -104,9 +109,11 @@ extension EmployeesViewController: UITableViewDataSource, UITableViewDelegate {
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//
-//    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        navigationController?.pushViewController(EmployeeDetailsViewController(employee: viewModel.dataSource[indexPath.section].employees[indexPath.row]), animated: true)
+    }
 }
 
 extension EmployeesViewController: UISearchBarDelegate {

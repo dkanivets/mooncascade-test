@@ -39,6 +39,10 @@ class EmployeesViewModel: EmployeesViewModelProtocol {
     
     var dataSource: [(title: String, employees: [RLMEmployee])] = []
     
+    init() {
+        self.refreshViewModel()
+    }
+    
     func refreshViewModel() {
         dataSource = {
             var dataSourceUnsorted: [(title: String, employees: [RLMEmployee])] = []

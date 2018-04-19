@@ -20,7 +20,7 @@ class EmployeeTableViewCell: UITableViewCell {
         contactLabel = UILabel()
         contactLabel.text = "  Contact  "
         contactLabel.textColor = UIColor.white
-        contactLabel.backgroundColor = UIColor.blue.withAlphaComponent(0.7)
+        contactLabel.backgroundColor = UIColor.blue
         contactLabel.layer.cornerRadius = 4
         contactLabel.clipsToBounds = true
         self.contentView.addSubview(contactLabel)

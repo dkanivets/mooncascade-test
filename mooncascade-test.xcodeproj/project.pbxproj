@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0A191A092088B220006997F4 /* employeesJSON.json in Resources */ = {isa = PBXBuildFile; fileRef = 0A191A082088B220006997F4 /* employeesJSON.json */; };
 		0A51352120871C8700A4A56C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51352020871C8700A4A56C /* AppDelegate.swift */; };
 		0A51352320871C8700A4A56C /* EmployeesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51352220871C8700A4A56C /* EmployeesViewController.swift */; };
 		0A51352820871C8900A4A56C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0A51352720871C8900A4A56C /* Assets.xcassets */; };
@@ -18,6 +19,7 @@
 		0A5135492087513400A4A56C /* EmployeeService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5135482087513400A4A56C /* EmployeeService.swift */; };
 		0A51354D2087545A00A4A56C /* EmployeesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354C2087545A00A4A56C /* EmployeesViewModel.swift */; };
 		0A51354F20875D3500A4A56C /* EmployeeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A51354E20875D3500A4A56C /* EmployeeTableViewCell.swift */; };
+		0AA4E9DE20887CA200537593 /* EmployeeDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AA4E9DD20887CA200537593 /* EmployeeDetailsViewController.swift */; };
 		2D04D6D34865741809EDBC34 /* Pods_mooncascade_test.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 81A0CC3DB1A3820A67D38483 /* Pods_mooncascade_test.framework */; };
 		E6A840625F9D90F7B6C91219 /* Pods_mooncascade_testTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9759F143FE9F67247D8F317A /* Pods_mooncascade_testTests.framework */; };
 /* End PBXBuildFile section */
@@ -33,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0A191A082088B220006997F4 /* employeesJSON.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = employeesJSON.json; sourceTree = "<group>"; };
 		0A51351D20871C8700A4A56C /* mooncascade-test.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mooncascade-test.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0A51352020871C8700A4A56C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0A51352220871C8700A4A56C /* EmployeesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		0A5135482087513400A4A56C /* EmployeeService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeService.swift; sourceTree = "<group>"; };
 		0A51354C2087545A00A4A56C /* EmployeesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesViewModel.swift; sourceTree = "<group>"; };
 		0A51354E20875D3500A4A56C /* EmployeeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeTableViewCell.swift; sourceTree = "<group>"; };
+		0AA4E9DD20887CA200537593 /* EmployeeDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeDetailsViewController.swift; sourceTree = "<group>"; };
 		0F31D8AA7EBFE71DB00F74E5 /* Pods-mooncascade-testTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-testTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-testTests/Pods-mooncascade-testTests.release.xcconfig"; sourceTree = "<group>"; };
 		1AE7CE0AB8EB60C3A3C1B02C /* Pods-mooncascade-test.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-test.release.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test.release.xcconfig"; sourceTree = "<group>"; };
 		4152541714962469024918F9 /* Pods-mooncascade-test.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mooncascade-test.debug.xcconfig"; path = "Pods/Target Support Files/Pods-mooncascade-test/Pods-mooncascade-test.debug.xcconfig"; sourceTree = "<group>"; };
@@ -88,6 +92,7 @@
 		0A51351420871C8700A4A56C = {
 			isa = PBXGroup;
 			children = (
+				0A191A082088B220006997F4 /* employeesJSON.json */,
 				0A51351F20871C8700A4A56C /* mooncascade-test */,
 				0A51353420871C8900A4A56C /* mooncascade-testTests */,
 				0A51351E20871C8700A4A56C /* Products */,
@@ -113,6 +118,7 @@
 				0A51354520874E8100A4A56C /* Models */,
 				0A51354020874B0700A4A56C /* Services */,
 				0A51354B2087544900A4A56C /* Employees */,
+				0AA4E9DC20887C7E00537593 /* EmployeeDetails */,
 				0A51352720871C8900A4A56C /* Assets.xcassets */,
 				0A51352920871C8900A4A56C /* LaunchScreen.storyboard */,
 				0A51352C20871C8900A4A56C /* Info.plist */,
@@ -154,6 +160,14 @@
 				0A51354E20875D3500A4A56C /* EmployeeTableViewCell.swift */,
 			);
 			path = Employees;
+			sourceTree = "<group>";
+		};
+		0AA4E9DC20887C7E00537593 /* EmployeeDetails */ = {
+			isa = PBXGroup;
+			children = (
+				0AA4E9DD20887CA200537593 /* EmployeeDetailsViewController.swift */,
+			);
+			path = EmployeeDetails;
 			sourceTree = "<group>";
 		};
 		6AB9F970EF4AAE296D1CD1FE /* Pods */ = {
@@ -256,6 +270,7 @@
 			files = (
 				0A51352B20871C8900A4A56C /* LaunchScreen.storyboard in Resources */,
 				0A51352820871C8900A4A56C /* Assets.xcassets in Resources */,
+				0A191A092088B220006997F4 /* employeesJSON.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -392,6 +407,7 @@
 				0A51352320871C8700A4A56C /* EmployeesViewController.swift in Sources */,
 				0A51354F20875D3500A4A56C /* EmployeeTableViewCell.swift in Sources */,
 				0A5135492087513400A4A56C /* EmployeeService.swift in Sources */,
+				0AA4E9DE20887CA200537593 /* EmployeeDetailsViewController.swift in Sources */,
 				0A51354420874E6000A4A56C /* SwiftExtensions.swift in Sources */,
 				0A51354720874F5800A4A56C /* RLMEmployee.swift in Sources */,
 				0A51354D2087545A00A4A56C /* EmployeesViewModel.swift in Sources */,

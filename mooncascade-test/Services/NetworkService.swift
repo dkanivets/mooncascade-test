@@ -41,11 +41,8 @@ enum NetworkService {
         SignalProducer<(response: HTTPURLResponse, data: Data), NSError> {
             let (responseProducerSignal, observerResponse) = SignalProducer<(response: HTTPURLResponse, data: Data), NSError>.ProducedSignal.pipe()
             let responseProducer = SignalProducer(responseProducerSignal)
-            
             let alamofireRequest = NetworkService.sessionManager.request(self.path.1, method: self.path.0, parameters: parameters)
-//                Alamofire.request(self.path.1, method: self.path.0, parameters: parameters)
-            
-            
+
             alamofireRequest.responseString { response in
                 print("REQUEST: \(response.request.debugDescription)")
                 print("RESPONSE: \(response.result.debugDescription)")

@@ -11,6 +11,7 @@ import ReactiveSwift
 import SwiftyJSON
 import RealmSwift
 import Contacts
+import ContactsUI
 
 struct EmployeeService {
     
@@ -32,34 +33,76 @@ struct EmployeeService {
     }()
     
     static var pullEmployeesAction: Action<([City]), [RLMEmployee], NSError> = Action {
-        var arrayOfSignalProducers: [SignalProducer<[RLMEmployee], NSError>] = []
-        var shouldClean = true
-        
+        var arrayOfSignalProducers: [SignalProducer<JSON, NSError>] = []
+
         for city in $0 {
-            let signalProducer = EmployeeService.pull(city: city, shouldClean: shouldClean)
-            shouldClean = false
+            let signalProducer = NetworkService.employeeList(city).jsonSignalProducer()
             arrayOfSignalProducers.append(signalProducer)
         }
-        return SignalProducer(arrayOfSignalProducers).flatten(.concat)
-    }
     
-    static func pull(city : City, shouldClean: Bool = false) -> SignalProducer<[RLMEmployee], NSError> {
-        return NetworkService.employeeList(city).jsonSignalProducer([:])
-            .flatMap(FlattenStrategy.concat, { json -> SignalProducer<[RLMEmployee], NSError> in
-                if shouldClean {
-                    let realm = try! Realm()
-                    try! realm.write {
-                        realm.deleteAll()
-                    }
-                }
+        return SignalProducer(arrayOfSignalProducers).flatten(.merge).collect().flatMap(FlattenStrategy.concat, { value -> SignalProducer<[RLMEmployee], NSError> in
+            let realm = try! Realm()
+            try! realm.write {
+                realm.deleteAll()
+            }
+            
+            var result: [RLMEmployee] = []
+            for json in value {
                 guard let employees = json["employees"].array,
-                    let result = employees.failableMap({$0.employeeToStorage()})
+                    let cityResult = employees.failableMap({$0.employeeToStorage()})
                     else {
                         return SignalProducer(error: NSError(domain: "Response can't be parsed", code: 100, userInfo: nil))
                 }
-                return SignalProducer(value: result)
-            })
+                result.append(contentsOf: cityResult)
+            }
+            return SignalProducer(value: result)
+        })
     }
+    
+    static func getContactFromID(contactID: String) -> CNContact? {
+        let predicate = CNContact.predicateForContacts(withIdentifiers: [contactID])
+        var contacts = [CNContact]()
+        let contactsStore = CNContactStore()
+        
+        do {
+            contacts = try contactsStore.unifiedContacts(matching: predicate, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()])
+        }
+        catch {
+        }
+
+        return contacts.isEmpty ? nil : contacts[0]
+    }
+    
+    
+//    static var pullEmployeesAction: Action<([City]), [RLMEmployee], NSError> = Action {
+//        var arrayOfSignalProducers: [SignalProducer<[RLMEmployee], NSError>] = []
+//        var shouldClean = true
+//
+//        for city in $0 {
+//            let signalProducer = EmployeeService.pull(city: city, shouldClean: shouldClean)
+//            shouldClean = false
+//            arrayOfSignalProducers.append(signalProducer)
+//        }
+//        return SignalProducer(arrayOfSignalProducers).flatten(.concat)
+//    }
+    
+//    static func pull(city : City, shouldClean: Bool = false) -> SignalProducer<[RLMEmployee], NSError> {
+//        return NetworkService.employeeList(city).jsonSignalProducer([:])
+//            .flatMap(FlattenStrategy.concat, { json -> SignalProducer<[RLMEmployee], NSError> in
+//                if shouldClean {
+//                    let realm = try! Realm()
+//                    try! realm.write {
+//                        realm.deleteAll()
+//                    }
+//                }
+//                guard let employees = json["employees"].array,
+//                    let result = employees.failableMap({$0.employeeToStorage()})
+//                    else {
+//                        return SignalProducer(error: NSError(domain: "Response can't be parsed", code: 100, userInfo: nil))
+//                }
+//                return SignalProducer(value: result)
+//            })
+//    }
     
     static func getContactID(employee: RLMEmployee) -> String? {
         for contact in contacts {

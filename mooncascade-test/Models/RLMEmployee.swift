@@ -21,11 +21,8 @@ class RLMEmployee: Object {
     func write() {
         let realm = try! Realm()
         try! realm.write {
-            realm.add(self, update: true)
+            realm.add(self)
         }
     }
-    
-    override static func primaryKey() -> String? {
-        return "email"
-    }
+
 }
