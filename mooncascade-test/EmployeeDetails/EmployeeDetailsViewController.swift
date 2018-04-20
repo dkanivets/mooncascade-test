@@ -107,7 +107,6 @@ class EmployeeDetailsViewController: UIViewController {
         let contactsController = CNContactViewController(for: contact)
         self.navigationController?.pushViewController(contactsController, animated: true)
     }
-
 }
 
 extension EmployeeDetailsViewController: UITableViewDataSource, UITableViewDelegate {

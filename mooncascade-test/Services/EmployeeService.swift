@@ -45,8 +45,8 @@ struct EmployeeService {
             try! realm.write {
                 realm.deleteAll()
             }
-            
             var result: [RLMEmployee] = []
+            
             for json in value {
                 guard let employees = json["employees"].array,
                     let cityResult = employees.failableMap({$0.employeeToStorage()})
@@ -55,6 +55,7 @@ struct EmployeeService {
                 }
                 result.append(contentsOf: cityResult)
             }
+            
             return SignalProducer(value: result)
         })
     }
@@ -67,12 +68,20 @@ struct EmployeeService {
         do {
             contacts = try contactsStore.unifiedContacts(matching: predicate, keysToFetch: [CNContactViewController.descriptorForRequiredKeys()])
         }
-        catch {
-        }
+        catch {}
 
         return contacts.isEmpty ? nil : contacts[0]
     }
     
+    static func getContactID(employee: RLMEmployee) -> String? {
+        for contact in contacts {
+            if contact.givenName == employee.firstName && contact.familyName == employee.lastName {
+                return contact.identifier
+            }
+        }
+        
+        return nil
+    }
     
 //    static var pullEmployeesAction: Action<([City]), [RLMEmployee], NSError> = Action {
 //        var arrayOfSignalProducers: [SignalProducer<[RLMEmployee], NSError>] = []
@@ -103,16 +112,6 @@ struct EmployeeService {
 //                return SignalProducer(value: result)
 //            })
 //    }
-    
-    static func getContactID(employee: RLMEmployee) -> String? {
-        for contact in contacts {
-            if contact.givenName == employee.firstName && contact.familyName == employee.lastName {
-                return contact.identifier
-            }
-        }
-        
-        return nil
-    }
 }
 
 extension JSON {

@@ -37,7 +37,7 @@ enum NetworkService {
         }
     }
     
-    func dataSignalProducer(_ parameters:[String : AnyObject] = [String: AnyObject]()) ->
+    fileprivate func dataSignalProducer(_ parameters:[String : AnyObject] = [String: AnyObject]()) ->
         SignalProducer<(response: HTTPURLResponse, data: Data), NSError> {
             let (responseProducerSignal, observerResponse) = SignalProducer<(response: HTTPURLResponse, data: Data), NSError>.ProducedSignal.pipe()
             let responseProducer = SignalProducer(responseProducerSignal)
