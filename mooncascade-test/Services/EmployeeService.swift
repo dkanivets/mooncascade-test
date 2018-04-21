@@ -75,7 +75,7 @@ struct EmployeeService {
     
     static func getContactID(employee: RLMEmployee) -> String? {
         for contact in contacts {
-            if contact.givenName == employee.firstName && contact.familyName == employee.lastName {
+            if contact.givenName.caseInsensitiveCompare(employee.firstName) == .orderedSame && contact.familyName.caseInsensitiveCompare(employee.lastName) == .orderedSame {
                 return contact.identifier
             }
         }
